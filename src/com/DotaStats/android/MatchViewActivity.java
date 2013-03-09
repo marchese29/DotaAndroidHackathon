@@ -15,7 +15,7 @@ public class MatchViewActivity extends Activity {
 	Button returnHomeButton;
 	Button individualStatsButton;
 	
-	private JSONParser parser;
+	JSONParser parser;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
