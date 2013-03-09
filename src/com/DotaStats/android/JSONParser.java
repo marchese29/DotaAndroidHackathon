@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -17,49 +19,55 @@ import org.json.JSONException;
 public class JSONParser {
 
 	private JSONArray jsonArray;
-	private String jsonString;
-	private String matchID;
+	private List<Player> playerList;
 
 	public JSONParser(String matchID) {
-		this.matchID = matchID;
-		this.jsonString = getJSONFromAddress();
+		String jsonString = getJSONFromMatchID(matchID);
+		this.playerList = new ArrayList<Player>();
 
 		try {
-			this.jsonArray = new JSONArray(this.jsonString);
+			this.jsonArray = new JSONArray(jsonString);
+
+			/*
+			 * Iterate through the array and create players. Add the players to
+			 * the playerList.
+			 */
+			for (int i = 0; i < jsonArray.length(); i++) {
+				this.playerList
+						.add(new Player(this.jsonArray.getJSONObject(i)));
+			}
+
 		} catch (JSONException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
 	}
 
-	private String getJSONFromAddress() {
+	private String getJSONFromMatchID(String matchID) {
 		StringBuilder sb = new StringBuilder();
-		
+
 		try {
-			DefaultHttpClient   httpclient = new DefaultHttpClient(new BasicHttpParams());
-			HttpPost httppost = new HttpPost("http://someJSONUrl/jsonPlace.html");
-			// Depends on your web service
+			DefaultHttpClient httpclient = new DefaultHttpClient(
+					new BasicHttpParams());
+			HttpPost httppost = new HttpPost(
+					"http://someJSONUrl/jsonPlace.html");
 			httppost.setHeader("Content-type", "application/json");
-	
 			InputStream inputStream = null;
-			HttpResponse response = httpclient.execute(httppost);           
+			HttpResponse response = httpclient.execute(httppost);
 			HttpEntity entity = response.getEntity();
-	
 			inputStream = entity.getContent();
-			// json is UTF-8 by default i beleive
-			BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, "UTF-8"), 8);
-			
-	
+			BufferedReader reader = new BufferedReader(new InputStreamReader(
+					inputStream, "UTF-8"), 8);
 			String line = null;
 			while ((line = reader.readLine()) != null) {
-			    sb.append(line + "\n");
+				sb.append(line + "\n");
 			}
-		} catch(ClientProtocolException e) {
+		} catch (ClientProtocolException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+
 		return sb.toString();
 	}
 }
