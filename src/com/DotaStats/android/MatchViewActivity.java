@@ -8,6 +8,7 @@ public class MatchViewActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		setContentView(R.layout.match_view_layout);
 	}
 
 }
