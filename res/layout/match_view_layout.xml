@@ -11,6 +11,20 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         tools:ignore="HardcodedText" >
+        
+        <TableRow
+            android:id="@+id/trVictoryRow"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+            
+            <TextView
+                android:id="@+id/tvVictoryText"
+                android:layout_gravity="left"
+                android:text="VICTORY"
+                android:textSize="30sp" />
+            
+        </TableRow>
 
         <TableRow
             android:id="@+id/trRadiantHeader"
@@ -22,11 +36,12 @@
                 android:id="@+id/tvRadiantHeader"
                 android:layout_gravity="center"
                 android:text="RADIANT"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:layout_span="8" />
         </TableRow>
 
         <TableRow
+            android:id="@+id/trFirstheader"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -423,8 +438,84 @@
                 android:id="@+id/tvSecondHeaderText"
                 android:layout_gravity="center"
                 android:text="DIRE"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:layout_span="8" />
+        </TableRow>
+        
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="5dp" >
+
+            <TextView
+                android:id="@+id/playerHeader2"
+                android:layout_weight="6"
+                android:minWidth="100dp"
+                android:text="Player"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/heroHeader2"
+                android:layout_weight="3"
+                android:minWidth="10dp"
+                android:text="Hero"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/levelHeader2"
+                android:layout_weight="3"
+                android:minWidth="50dp"
+                android:text="Level"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/kHeader2"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:minWidth="20dp"
+                android:text="K"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/dHeader2"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:minWidth="20dp"
+                android:text="D"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/aHeader2"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:minWidth="20dp"
+                android:text="A"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/lhHeader2"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:minWidth="30dp"
+                android:text="LH"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/dnHeader2"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:minWidth="35dp"
+                android:text="DN"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/gpmHeader2"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:minWidth="50dp"
+                android:text="GPM"
+                android:textSize="20sp" />
         </TableRow>
 
         <TableRow
