@@ -16,12 +16,7 @@ public class MatchViewActivity extends Activity {
 	private Button returnHomeButton;
 	private Button individualStatsButton;
 	private TableRow[] table;
-	private TableRow player1Row;
-	private TableRow player2Row;
-	private TableRow player3Row;
-	private TableRow player4Row;
-	private TableRow player5Row;
-
+	
 	private String matchID;
 
 	private JSONParser parser;
