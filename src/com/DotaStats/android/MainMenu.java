@@ -16,12 +16,22 @@ public class MainMenu extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main_menu);
-		setWidgets();
+		setWidgets(getIntent());
 	}
 
-	private void setWidgets() {
+	private void setWidgets(Intent intent) {
 		this.matchSearchButton = (Button) findViewById(R.id.bMatchSearch);
 		this.matchIdField = (EditText) findViewById(R.id.etMatchIdText);
+		
+		// If our intent contains a matchID, make it the text in the EditText
+		String matchID = intent.getStringExtra("matchID");
+		if (matchID != null) {
+			this.matchIdField.setText(matchID);
+		}
+		
+		/*
+		 * Click listener for matchSearchButton
+		 */
 		matchSearchButton.setOnClickListener(new View.OnClickListener() {
 
 			@Override
