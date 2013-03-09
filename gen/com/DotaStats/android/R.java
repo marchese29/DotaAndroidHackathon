@@ -17,6 +17,8 @@ public final class R {
         public static final int OverallLayout=0x7f060003;
         public static final int aHeader=0x7f060009;
         public static final int bMatchSearch=0x7f060002;
+        public static final int bReturnHome=0x7f060040;
+        public static final int bViewIndividuals=0x7f060041;
         public static final int dHeader=0x7f060008;
         public static final int dnHeader=0x7f06000b;
         public static final int etMatchIdText=0x7f060001;
@@ -32,6 +34,7 @@ public final class R {
         public static final int lhHeader=0x7f06000a;
         public static final int playerHeader=0x7f060004;
         public static final int textView1=0x7f060000;
+        public static final int trButtonRow=0x7f06003f;
         public static final int trPlayer1Row=0x7f06000d;
         public static final int trPlayer2Row=0x7f060017;
         public static final int trPlayer3Row=0x7f060021;
