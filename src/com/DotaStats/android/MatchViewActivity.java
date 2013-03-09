@@ -14,6 +14,8 @@ public class MatchViewActivity extends Activity {
 	// Widgets
 	Button returnHomeButton;
 	Button individualStatsButton;
+	
+	private JSONParser parser;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +23,10 @@ public class MatchViewActivity extends Activity {
 		setContentView(R.layout.match_view_layout);
 		Intent intent = getIntent();
 		this.matchID = intent.getStringExtra("matchID");
+		
+		/*
+		 * TODO: Create all of the JSON objects using the JSONParser class.
+		 */
 
 		/*
 		 * TODO: Check to see that the match has loaded correctly.
