@@ -27,6 +27,7 @@ public class MatchViewActivity extends Activity {
 		/*
 		 * TODO: Create all of the JSON objects using the JSONParser class.
 		 */
+		this.parser = new JSONParser(matchID);
 
 		/*
 		 * TODO: Check to see that the match has loaded correctly.
