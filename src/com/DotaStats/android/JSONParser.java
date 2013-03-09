@@ -38,10 +38,10 @@ public class JSONParser {
 		this.playerList.add(new Player("Player4", 4, 4, 4, 4, 4, 4, 4));
 		this.playerList.add(new Player("Player5", 5, 5, 5, 5, 5, 5, 5));
 		this.playerList.add(new Player("Player6", 6, 6, 6, 6, 6, 6, 6));
-		this.playerList.add(new Player("Player6", 7, 7, 7, 7, 7, 7, 7));
-		this.playerList.add(new Player("Player6", 8, 8, 8, 8, 8, 8, 8));
-		this.playerList.add(new Player("Player6", 9, 9, 9, 9, 9, 9, 9));
-		this.playerList.add(new Player("Player6", 10, 10, 10, 10, 10, 10, 10));
+		this.playerList.add(new Player("Player7", 7, 7, 7, 7, 7, 7, 7));
+		this.playerList.add(new Player("Player8", 8, 8, 8, 8, 8, 8, 8));
+		this.playerList.add(new Player("Player9", 9, 9, 9, 9, 9, 9, 9));
+		this.playerList.add(new Player("Player10", 10, 10, 10, 10, 10, 10, 10));
 
 	}
 

@@ -20,9 +20,10 @@
             
             <TextView
                 android:id="@+id/tvVictoryText"
-                android:layout_gravity="left"
+                android:layout_gravity="center"
                 android:text="VICTORY"
-                android:textSize="30sp" />
+                android:textSize="30sp"
+                android:layout_span="9" />
             
         </TableRow>
 
@@ -37,7 +38,7 @@
                 android:layout_gravity="center"
                 android:text="RADIANT"
                 android:textSize="20sp"
-                android:layout_span="8" />
+                android:layout_span="4" />
         </TableRow>
 
         <TableRow
@@ -439,7 +440,7 @@
                 android:layout_gravity="center"
                 android:text="DIRE"
                 android:textSize="20sp"
-                android:layout_span="8" />
+                android:layout_span="4" />
         </TableRow>
         
         <TableRow

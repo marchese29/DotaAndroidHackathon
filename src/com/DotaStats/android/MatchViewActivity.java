@@ -74,16 +74,22 @@ public class MatchViewActivity extends Activity {
 	}
 
 	private void setWidgets2() {
-		this.table = new TableRow[5];
+		this.table = new TableRow[10];
 		this.table[0] = (TableRow) findViewById(R.id.trPlayer1Row);
 		this.table[1] = (TableRow) findViewById(R.id.trPlayer2Row);
 		this.table[2] = (TableRow) findViewById(R.id.trPlayer3Row);
 		this.table[3] = (TableRow) findViewById(R.id.trPlayer4Row);
 		this.table[4] = (TableRow) findViewById(R.id.trPlayer5Row);
+		
+		this.table[5] = (TableRow) findViewById(R.id.trPlayer6Row);
+		this.table[6] = (TableRow) findViewById(R.id.trPlayer7Row);
+		this.table[7] = (TableRow) findViewById(R.id.trPlayer8Row);
+		this.table[8] = (TableRow) findViewById(R.id.trPlayer9Row);
+		this.table[9] = (TableRow) findViewById(R.id.trPlayer10Row);
 	}
 
 	private void setDataFromPlayerList(List<Player> playerList) {
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 10; i++) {
 			Player currentPlayer = playerList.get(i);
 			List<Integer> playerStats = currentPlayer.getIntList();
 			TextView playerName = (TextView) this.table[i].getVirtualChildAt(0);
