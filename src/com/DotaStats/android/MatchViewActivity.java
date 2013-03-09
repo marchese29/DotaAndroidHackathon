@@ -36,14 +36,15 @@ public class MatchViewActivity extends Activity {
 		/*
 		 * TODO: Create all of the JSON objects using the JSONParser class.
 		 */
+		setWidgets();
+		setWidgets2();
 		this.parser = new JSONParser(matchID);
 		this.setDataFromPlayerList(parser.getPlayerList());
 
 		/*
 		 * TODO: Check to see that the match has loaded correctly.
 		 */
-		setWidgets();
-		setWidgets2();
+		
 	}
 
 	private void setWidgets() {
@@ -100,9 +101,9 @@ public class MatchViewActivity extends Activity {
 			TextView playerName = (TextView) this.table[i].getVirtualChildAt(0);
 			playerName.setText(currentPlayer.name);
 			
-			for (int j = 2; j < 9; i++) {
+			for (int j = 2; j < 9; j++) {
 				TextView view = (TextView) this.table[i].getVirtualChildAt(j);
-				view.setText(playerStats.get(j).toString());
+				view.setText(playerStats.get(j - 2).toString());
 			}
 		}
 	}
