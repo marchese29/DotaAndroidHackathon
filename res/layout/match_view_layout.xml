@@ -4,44 +4,51 @@
     android:id="@+id/OverallLayout"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    tools:ignore="HardcodedText,ContentDescription" >
+    tools:ignore="HardcodedText" >
 
     <TableRow
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:padding="2dip" >
 
         <TextView
             android:id="@+id/playerHeader"
-            android:text="player"
-            tools:ignore="HardcodedText" />
+            android:minWidth="80dp"
+            android:text="Player" />
 
         <TextView
             android:id="@+id/heroHeader"
-            android:text="hero" />
+            android:minWidth="50dp"
+            android:text="Hero" />
 
         <TextView
             android:id="@+id/levelHeader"
+            android:minWidth="30dp"
             android:text="Level" />
 
         <TextView
             android:id="@+id/kHeader"
+            android:minWidth="20dp"
             android:text="K" />
 
         <TextView
             android:id="@+id/dHeader"
+            android:minWidth="20dp"
             android:text="D" />
 
         <TextView
             android:id="@+id/aHeader"
+            android:minWidth="20dp"
             android:text="A" />
 
         <TextView
             android:id="@+id/lhHeader"
+            android:minWidth="25dp"
             android:text="LH" />
 
         <TextView
             android:id="@+id/dnHeader"
+            android:minWidth="25dp"
             android:text="DN" />
 
         <TextView
@@ -51,207 +58,257 @@
 
     <TableRow
         android:id="@+id/trPlayer1Row"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:padding="2dip" >
 
         <TextView
             android:id="@+id/tvPlayer1"
-            android:text="Player1" />
+            android:text="Player1"
+            android:gravity="center" />
 
-        <ImageView android:id="@+id/ivPlayer1Hero" />
+        <ImageView android:id="@+id/ivPlayer1Hero"
+            android:contentDescription="HeroPicture"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/tvPlayer1Level"
-            android:text="0" />
+            android:text="0"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/tvPlayer1Kills"
-            android:text="0" />
+            android:text="0"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/tvPlayer1Deaths"
-            android:text="0" />
+            android:text="0"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/tvPlayer1Assists"
-            android:text="0" />
+            android:text="0"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/tvPlayer1LastHit"
-            android:text="0" />
+            android:text="0"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/tvPlayer1Denies"
-            android:text="0" />
+            android:text="0"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/tvPlayer1GoldPerMinute"
-            android:text="0" />
+            android:text="0"
+            android:gravity="center" />
     </TableRow>
 
     <TableRow
         android:id="@+id/trPlayer2Row"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:padding="2dip" >
 
         <TextView
             android:id="@+id/tvPlayer2"
-            android:text="Player1" />
+            android:text="Player2"
+            android:gravity="center" />
 
-        <ImageView android:id="@+id/ivPlayer2Hero" />
+        <ImageView android:id="@+id/ivPlayer2Hero"
+            android:contentDescription="HeroPicture"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/tvPlayer2Level"
-            android:text="0" />
+            android:text="0"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/tvPlayer2Kills"
-            android:text="0" />
+            android:text="0"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/tvPlayer2Deaths"
-            android:text="0" />
+            android:text="0"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/tvPlayer2Assists"
-            android:text="0" />
+            android:text="0"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/tvPlayer2LastHit"
-            android:text="0" />
+            android:text="0"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/tvPlayer2Denies"
-            android:text="0" />
+            android:text="0"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/tvPlayer2GoldPerMinute"
-            android:text="0" />
+            android:text="0"
+            android:gravity="center" />
     </TableRow>
 
     <TableRow
         android:id="@+id/trPlayer3Row"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:padding="2dip" >
 
         <TextView
             android:id="@+id/tvPlayer3"
-            android:text="Player1" />
+            android:text="Player3"
+            android:gravity="center" />
 
-        <ImageView android:id="@+id/ivPlayer3Hero" />
+        <ImageView android:id="@+id/ivPlayer3Hero"
+            android:contentDescription="HeroPicture"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/tvPlayer3Level"
-            android:text="0" />
+            android:text="0"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/tvPlayer3Kills"
-            android:text="0" />
+            android:text="0"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/tvPlayer3Deaths"
-            android:text="0" />
+            android:text="0"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/tvPlayer3Assists"
-            android:text="0" />
+            android:text="0"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/tvPlayer3LastHit"
-            android:text="0" />
+            android:text="0"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/tvPlayer3Denies"
-            android:text="0" />
+            android:text="0"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/tvPlayer3GoldPerMinute"
-            android:text="0" />
+            android:text="0"
+            android:gravity="center" />
     </TableRow>
 
     <TableRow
         android:id="@+id/trPlayer4Row"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:padding="2dip" >
 
         <TextView
             android:id="@+id/tvPlayer4"
-            android:text="Player1" />
+            android:text="Player4"
+            android:gravity="center" />
 
-        <ImageView android:id="@+id/ivPlayer4Hero" />
+        <ImageView android:id="@+id/ivPlayer4Hero"
+            android:contentDescription="HeroPicture"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/tvPlayer4Level"
-            android:text="0" />
+            android:text="0"
+			android:gravity="center" />
 
         <TextView
             android:id="@+id/tvPlayer4Kills"
-            android:text="0" />
+            android:text="0"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/tvPlayer4Deaths"
-            android:text="0" />
+            android:text="0"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/tvPlayer4Assists"
-            android:text="0" />
+            android:text="0"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/tvPlayer4LastHit"
-            android:text="0" />
+            android:text="0"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/tvPlayer4Denies"
-            android:text="0" />
+            android:text="0"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/tvPlayer4GoldPerMinute"
-            android:text="0" />
+            android:text="0"
+            android:gravity="center" />
     </TableRow>
 
     <TableRow
         android:id="@+id/trPlayer5Row"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:padding="2dip" >
 
         <TextView
             android:id="@+id/tvPlayer5"
-            android:text="Player1" />
+            android:text="Player5"
+            android:gravity="center" />
 
-        <ImageView android:id="@+id/ivPlayer5Hero" />
+        <ImageView android:id="@+id/ivPlayer5Hero"
+            android:contentDescription="HeroPicture"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/tvPlayer5Level"
-            android:text="0" />
+            android:text="0"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/tvPlayer5Kills"
-            android:text="0" />
+            android:text="0"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/tvPlayer5Deaths"
-            android:text="0" />
+            android:text="0"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/tvPlayer5Assists"
-            android:text="0" />
+            android:text="0"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/tvPlayer5LastHit"
-            android:text="0" />
+            android:text="0"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/tvPlayer5Denies"
-            android:text="0" />
+            android:text="0"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/tvPlayer5GoldPerMinute"
-            android:text="0" />
+            android:text="0"
+            android:gravity="center" />
     </TableRow>
 
 </TableLayout>
