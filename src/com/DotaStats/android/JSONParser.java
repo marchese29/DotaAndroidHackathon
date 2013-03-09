@@ -33,8 +33,14 @@ public class JSONParser {
 			 * the playerList.
 			 */
 			for (int i = 0; i < jsonArray.length(); i++) {
-				this.playerList
-						.add(new Player(this.jsonArray.getJSONObject(i)));
+				/*
+				 * Create test data for now, TODO: Make this do actual work.
+				 */
+				this.playerList.add(new Player("Player1", 1, 1, 1, 1, 1, 1, 1));
+				this.playerList.add(new Player("Player2", 2, 2, 2, 2, 2, 2, 2));
+				this.playerList.add(new Player("Player3", 3, 3, 3, 3, 3, 3, 3));
+				this.playerList.add(new Player("Player4", 4, 4, 4, 4, 4, 4, 4));
+				this.playerList.add(new Player("Player5", 5, 5, 5, 5, 5, 5, 5));
 			}
 
 		} catch (JSONException e) {
