@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">Dota Hackathon</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="menu_settings">Settings</string>
+    <string name="enter_id_prompt">Enter a match ID:</string>
+    <string name="match_id">Match ID</string>
 
 </resources>
