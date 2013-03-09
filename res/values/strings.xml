@@ -4,5 +4,6 @@
     <string name="app_name">Dota Hackathon</string>
     <string name="enter_id_prompt">Enter a match ID:</string>
     <string name="match_id">Match ID</string>
+    <string name="search">Search</string>
 
 </resources>
