@@ -14,7 +14,7 @@ public class Player {
 	private int goldPerMinute;
 	
 	public Player(JSONObject jsonObject) {
-		
+		// TODO: Populate the player data from the JSONObject.
 	}
 	
 	public String getName() {

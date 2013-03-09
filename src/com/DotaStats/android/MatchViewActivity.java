@@ -1,5 +1,7 @@
 package com.DotaStats.android;
 
+import java.util.List;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,13 +11,13 @@ import android.widget.Toast;
 
 public class MatchViewActivity extends Activity {
 
-	String matchID;
-
 	// Widgets
-	Button returnHomeButton;
-	Button individualStatsButton;
+	private Button returnHomeButton;
+	private Button individualStatsButton;
 	
-	JSONParser parser;
+	private String matchID;
+	
+	private JSONParser parser;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,7 @@ public class MatchViewActivity extends Activity {
 		 * TODO: Create all of the JSON objects using the JSONParser class.
 		 */
 		this.parser = new JSONParser(matchID);
+		this.setDataFromPlayerList(parser.getPlayerList());
 
 		/*
 		 * TODO: Check to see that the match has loaded correctly.
@@ -69,6 +72,12 @@ public class MatchViewActivity extends Activity {
 								.show();
 					}
 				});
+	}
+	
+	private void setDataFromPlayerList(List<Player> playerList) {
+		/*
+		 * TODO: Pull the player data and use it to populate the data table.
+		 */
 	}
 
 }

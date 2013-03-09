@@ -70,4 +70,8 @@ public class JSONParser {
 
 		return sb.toString();
 	}
+	
+	public List<Player> getPlayerList() {
+		return this.playerList;
+	}
 }
