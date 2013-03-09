@@ -3,7 +3,7 @@ package com.DotaStats.android;
 import org.json.JSONObject;
 
 public class Player {
-	
+		
 	private String name;
 	private int level;
 	private int kills;

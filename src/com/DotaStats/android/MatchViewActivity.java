@@ -7,16 +7,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 public class MatchViewActivity extends Activity {
 
 	// Widgets
 	private Button returnHomeButton;
 	private Button individualStatsButton;
-	
+
 	private String matchID;
-	
+
 	private JSONParser parser;
 
 	@Override
@@ -25,7 +24,7 @@ public class MatchViewActivity extends Activity {
 		setContentView(R.layout.match_view_layout);
 		Intent intent = getIntent();
 		this.matchID = intent.getStringExtra("matchID");
-		
+
 		/*
 		 * TODO: Create all of the JSON objects using the JSONParser class.
 		 */
@@ -64,16 +63,13 @@ public class MatchViewActivity extends Activity {
 
 					@Override
 					public void onClick(View v) {
-						/*
-						 * TODO: Add true functionality to this button
-						 */
-						Toast.makeText(getApplicationContext(),
-								"Stats button clicked", Toast.LENGTH_SHORT)
-								.show();
+						Intent intent = new Intent(MatchViewActivity.this, IndividualStatsActivity.class);
+						intent.putExtra("matchID", matchID);
+						startActivity(intent);
 					}
 				});
 	}
-	
+
 	private void setDataFromPlayerList(List<Player> playerList) {
 		/*
 		 * TODO: Pull the player data and use it to populate the data table.
