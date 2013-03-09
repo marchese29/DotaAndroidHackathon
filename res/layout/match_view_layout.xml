@@ -21,10 +21,10 @@
 
         <TextView
             android:id="@+id/heroHeader"
-            android:minWidth="50dp"
+            android:layout_weight="3"
+            android:minWidth="10dp"
             android:text="Hero"
-            android:textSize="20sp"
-            android:layout_weight="3"/>
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/levelHeader"

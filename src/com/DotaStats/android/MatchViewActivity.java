@@ -35,16 +35,13 @@ public class MatchViewActivity extends Activity {
 
 		/*
 		 * TODO: Create all of the JSON objects using the JSONParser class.
+		 * Also, make sure the table has loaded correctly.
 		 */
 		setWidgets();
 		setWidgets2();
 		this.parser = new JSONParser(matchID);
 		this.setDataFromPlayerList(parser.getPlayerList());
 
-		/*
-		 * TODO: Check to see that the match has loaded correctly.
-		 */
-		
 	}
 
 	private void setWidgets() {
@@ -73,25 +70,21 @@ public class MatchViewActivity extends Activity {
 
 					@Override
 					public void onClick(View v) {
-						Intent intent = new Intent(MatchViewActivity.this, IndividualStatsActivity.class);
+						Intent intent = new Intent(MatchViewActivity.this,
+								IndividualStatsActivity.class);
 						intent.putExtra("matchID", matchID);
 						startActivity(intent);
 					}
 				});
 	}
-	
+
 	private void setWidgets2() {
-		this.player1Row = (TableRow) findViewById(R.id.trPlayer1Row);
-		this.player2Row = (TableRow) findViewById(R.id.trPlayer2Row);
-		this.player3Row = (TableRow) findViewById(R.id.trPlayer3Row);
-		this.player4Row = (TableRow) findViewById(R.id.trPlayer4Row);
-		this.player5Row = (TableRow) findViewById(R.id.trPlayer5Row);
 		this.table = new TableRow[5];
-		this.table[0] = player1Row;
-		this.table[1] = player2Row;
-		this.table[2] = player3Row;
-		this.table[3] = player4Row;
-		this.table[4] = player5Row;
+		this.table[0] = (TableRow) findViewById(R.id.trPlayer1Row);
+		this.table[1] = (TableRow) findViewById(R.id.trPlayer2Row);
+		this.table[2] = (TableRow) findViewById(R.id.trPlayer3Row);
+		this.table[3] = (TableRow) findViewById(R.id.trPlayer4Row);
+		this.table[4] = (TableRow) findViewById(R.id.trPlayer5Row);
 	}
 
 	private void setDataFromPlayerList(List<Player> playerList) {
@@ -100,7 +93,7 @@ public class MatchViewActivity extends Activity {
 			List<Integer> playerStats = currentPlayer.getIntList();
 			TextView playerName = (TextView) this.table[i].getVirtualChildAt(0);
 			playerName.setText(currentPlayer.name);
-			
+
 			for (int j = 2; j < 9; j++) {
 				TextView view = (TextView) this.table[i].getVirtualChildAt(j);
 				view.setText(playerStats.get(j - 2).toString());
