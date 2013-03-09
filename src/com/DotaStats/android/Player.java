@@ -1,17 +1,20 @@
 package com.DotaStats.android;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.json.JSONObject;
 
 public class Player {
 
-	private String name;
-	private int level;
-	private int kills;
-	private int deaths;
-	private int assists;
-	private int lastHits;
-	private int denies;
-	private int goldPerMinute;
+	public String name;
+	public int level;
+	public int kills;
+	public int deaths;
+	public int assists;
+	public int lastHits;
+	public int denies;
+	public int goldPerMinute;
 
 	public Player(JSONObject jsonObject) {
 		// TODO: Populate the player data from the JSONObject.
@@ -31,37 +34,18 @@ public class Player {
 		this.denies = denies;
 		this.goldPerMinute = goldPerMinute;
 	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public int getLevel() {
-		return this.level;
-	}
-
-	public int getKills() {
-		return this.kills;
-	}
-
-	public int getDeaths() {
-		return this.deaths;
-	}
-
-	public int getAssists() {
-		return this.assists;
-	}
-
-	public int getLastHits() {
-		return this.lastHits;
-	}
-
-	public int getDenies() {
-		return this.denies;
-	}
-
-	public int getGoldPerMinute() {
-		return this.goldPerMinute;
+	
+	public List<Integer> getIntList() {
+		List<Integer> list = new ArrayList<Integer>();
+		list.add(level);
+		list.add(kills);
+		list.add(deaths);
+		list.add(assists);
+		list.add(lastHits);
+		list.add(denies);
+		list.add(goldPerMinute);
+		
+		return list;
 	}
 
 }

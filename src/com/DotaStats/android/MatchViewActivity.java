@@ -7,12 +7,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TableRow;
 
 public class MatchViewActivity extends Activity {
 
 	// Widgets
 	private Button returnHomeButton;
 	private Button individualStatsButton;
+	private TableRow[] table;
+	private TableRow player1Row;
+	private TableRow player2Row;
+	private TableRow player3Row;
+	private TableRow player4Row;
+	private TableRow player5Row;
 
 	private String matchID;
 
@@ -35,6 +42,7 @@ public class MatchViewActivity extends Activity {
 		 * TODO: Check to see that the match has loaded correctly.
 		 */
 		setWidgets();
+		setWidgets2();
 	}
 
 	private void setWidgets() {
@@ -69,11 +77,27 @@ public class MatchViewActivity extends Activity {
 					}
 				});
 	}
+	
+	private void setWidgets2() {
+		this.player1Row = (TableRow) findViewById(R.id.trPlayer1Row);
+		this.player2Row = (TableRow) findViewById(R.id.trPlayer2Row);
+		this.player3Row = (TableRow) findViewById(R.id.trPlayer3Row);
+		this.player4Row = (TableRow) findViewById(R.id.trPlayer4Row);
+		this.player5Row = (TableRow) findViewById(R.id.trPlayer5Row);
+		this.table = new TableRow[5];
+		this.table[0] = player1Row;
+		this.table[1] = player2Row;
+		this.table[2] = player3Row;
+		this.table[3] = player4Row;
+		this.table[4] = player5Row;
+	}
 
 	private void setDataFromPlayerList(List<Player> playerList) {
-		/*
-		 * TODO: Pull the player data and use it to populate the data table.
-		 */
+		for (int i = 0; i < 5; i++) {
+			for (int j = 0; j < table[i].getVirtualChildCount(); i++) {
+				
+			}
+		}
 	}
 
 }
