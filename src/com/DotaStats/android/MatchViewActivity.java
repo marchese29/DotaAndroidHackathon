@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TableRow;
+import android.widget.TextView;
 
 public class MatchViewActivity extends Activity {
 
@@ -94,8 +95,14 @@ public class MatchViewActivity extends Activity {
 
 	private void setDataFromPlayerList(List<Player> playerList) {
 		for (int i = 0; i < 5; i++) {
-			for (int j = 0; j < table[i].getVirtualChildCount(); i++) {
-				
+			Player currentPlayer = playerList.get(i);
+			List<Integer> playerStats = currentPlayer.getIntList();
+			TextView playerName = (TextView) this.table[i].getVirtualChildAt(0);
+			playerName.setText(currentPlayer.name);
+			
+			for (int j = 2; j < 9; i++) {
+				TextView view = (TextView) this.table[i].getVirtualChildAt(j);
+				view.setText(playerStats.get(j).toString());
 			}
 		}
 	}
