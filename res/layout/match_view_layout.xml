@@ -1,410 +1,755 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/OverallLayout"
+    android:id="@+id/ScrollMaster"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    tools:ignore="HardcodedText" >
+    tools:ignore="HardcodedText,TooManyViews" >
 
-    <TableRow
+    <TableLayout
+        android:id="@+id/OverallLayout"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:layout_weight="1" >
+        tools:ignore="HardcodedText" >
 
-        <TextView
-            android:id="@+id/playerHeader"
-            android:minWidth="100dp"
-            android:text="Player"
-            android:textSize="20sp"
-            android:layout_weight="6" />
+        <TableRow
+            android:id="@+id/trRadiantHeader"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
 
-        <TextView
-            android:id="@+id/heroHeader"
-            android:layout_weight="3"
-            android:minWidth="10dp"
-            android:text="Hero"
-            android:textSize="20sp" />
+            <TextView
+                android:id="@+id/tvRadiantHeader"
+                android:layout_gravity="center"
+                android:text="RADIANT"
+                android:textSize="25sp"
+                android:layout_span="8" />
+        </TableRow>
 
-        <TextView
-            android:id="@+id/levelHeader"
-            android:minWidth="50dp"
-            android:text="Level"
-            android:textSize="20sp"
-            android:layout_weight="3" />
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="5dp" >
 
-        <TextView
-            android:id="@+id/kHeader"
-            android:gravity="center"
-            android:minWidth="20dp"
-            android:text="K"
-            android:textSize="20sp"
-            android:layout_weight="2" />
+            <TextView
+                android:id="@+id/playerHeader"
+                android:layout_weight="6"
+                android:minWidth="100dp"
+                android:text="Player"
+                android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/dHeader"
-            android:gravity="center"
-            android:minWidth="20dp"
-            android:text="D"
-            android:textSize="20sp"
-            android:layout_weight="2" />
+            <TextView
+                android:id="@+id/heroHeader"
+                android:layout_weight="3"
+                android:minWidth="10dp"
+                android:text="Hero"
+                android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/aHeader"
-            android:gravity="center"
-            android:minWidth="20dp"
-            android:text="A"
-            android:textSize="20sp"
-            android:layout_weight="2" />
+            <TextView
+                android:id="@+id/levelHeader"
+                android:layout_weight="3"
+                android:minWidth="50dp"
+                android:text="Level"
+                android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/lhHeader"
-            android:gravity="center"
-            android:minWidth="30dp"
-            android:text="LH"
-            android:textSize="20sp"
-            android:layout_weight="2" />
+            <TextView
+                android:id="@+id/kHeader"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:minWidth="20dp"
+                android:text="K"
+                android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/dnHeader"
-            android:gravity="center"
-            android:minWidth="35dp"
-            android:text="DN"
-            android:textSize="20sp"
-            android:layout_weight="2" />
+            <TextView
+                android:id="@+id/dHeader"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:minWidth="20dp"
+                android:text="D"
+                android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/gpmHeader"
-            android:gravity="center"
-            android:minWidth="50dp"
-            android:text="GPM"
-            android:textSize="20sp"
-            android:layout_weight="3" />
+            <TextView
+                android:id="@+id/aHeader"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:minWidth="20dp"
+                android:text="A"
+                android:textSize="20sp" />
 
-    </TableRow>
+            <TextView
+                android:id="@+id/lhHeader"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:minWidth="30dp"
+                android:text="LH"
+                android:textSize="20sp" />
 
-    <TableRow
-        android:id="@+id/trPlayer1Row"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:padding="4dp"
-        android:layout_weight="1" >
+            <TextView
+                android:id="@+id/dnHeader"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:minWidth="35dp"
+                android:text="DN"
+                android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/tvPlayer1"
-            android:gravity="center"
-            android:text="Player1"
-            android:layout_weight="6" />
+            <TextView
+                android:id="@+id/gpmHeader"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:minWidth="50dp"
+                android:text="GPM"
+                android:textSize="20sp" />
+        </TableRow>
 
-        <ImageView
-            android:id="@+id/ivPlayer1Hero"
-            android:contentDescription="HeroPicture"
-            android:gravity="center"
-            android:layout_weight="3" />
+        <TableRow
+            android:id="@+id/trPlayer1Row"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="4dp" >
 
-        <TextView
-            android:id="@+id/tvPlayer1Level"
-            android:gravity="center"
-            android:text="0"
-            android:layout_weight="3" />
+            <TextView
+                android:id="@+id/tvPlayer1"
+                android:layout_weight="6"
+                android:gravity="center"
+                android:text="Player1" />
 
-        <TextView
-            android:id="@+id/tvPlayer1Kills"
-            android:gravity="center"
-            android:text="0"
-            android:layout_weight="2" />
+            <ImageView
+                android:id="@+id/ivPlayer1Hero"
+                android:layout_weight="3"
+                android:contentDescription="HeroPicture"
+                android:gravity="center" />
 
-        <TextView
-            android:id="@+id/tvPlayer1Deaths"
-            android:gravity="center"
-            android:text="0"
-            android:layout_weight="2" />
+            <TextView
+                android:id="@+id/tvPlayer1Level"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="0" />
 
-        <TextView
-            android:id="@+id/tvPlayer1Assists"
-            android:gravity="center"
-            android:text="0"
-            android:layout_weight="2" />
+            <TextView
+                android:id="@+id/tvPlayer1Kills"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
 
-        <TextView
-            android:id="@+id/tvPlayer1LastHit"
-            android:gravity="center"
-            android:text="0"
-            android:layout_weight="2" />
+            <TextView
+                android:id="@+id/tvPlayer1Deaths"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
 
-        <TextView
-            android:id="@+id/tvPlayer1Denies"
-            android:gravity="center"
-            android:text="0"
-            android:layout_weight="2" />
+            <TextView
+                android:id="@+id/tvPlayer1Assists"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
 
-        <TextView
-            android:id="@+id/tvPlayer1GoldPerMinute"
-            android:gravity="center"
-            android:text="0"
-            android:layout_weight="3" />
-    </TableRow>
+            <TextView
+                android:id="@+id/tvPlayer1LastHit"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
 
-    <TableRow
-        android:id="@+id/trPlayer2Row"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:padding="4dp"
-        android:layout_weight="1" >
+            <TextView
+                android:id="@+id/tvPlayer1Denies"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
 
-        <TextView
-            android:id="@+id/tvPlayer2"
-            android:gravity="center"
-            android:text="Player2"
-            android:layout_weight="6" />
+            <TextView
+                android:id="@+id/tvPlayer1GoldPerMinute"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="0" />
+        </TableRow>
 
-        <ImageView
-            android:id="@+id/ivPlayer2Hero"
-            android:contentDescription="HeroPicture"
-            android:gravity="center"
-            android:layout_weight="3" />
+        <TableRow
+            android:id="@+id/trPlayer2Row"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="4dp" >
 
-        <TextView
-            android:id="@+id/tvPlayer2Level"
-            android:gravity="center"
-            android:text="0"
-            android:layout_weight="3" />
+            <TextView
+                android:id="@+id/tvPlayer2"
+                android:layout_weight="6"
+                android:gravity="center"
+                android:text="Player2" />
 
-        <TextView
-            android:id="@+id/tvPlayer2Kills"
-            android:gravity="center"
-            android:text="0"
-            android:layout_weight="2" />
+            <ImageView
+                android:id="@+id/ivPlayer2Hero"
+                android:layout_weight="3"
+                android:contentDescription="HeroPicture"
+                android:gravity="center" />
 
-        <TextView
-            android:id="@+id/tvPlayer2Deaths"
-            android:gravity="center"
-            android:text="0"
-            android:layout_weight="2" />
+            <TextView
+                android:id="@+id/tvPlayer2Level"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="0" />
 
-        <TextView
-            android:id="@+id/tvPlayer2Assists"
-            android:gravity="center"
-            android:text="0"
-            android:layout_weight="2" />
+            <TextView
+                android:id="@+id/tvPlayer2Kills"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
 
-        <TextView
-            android:id="@+id/tvPlayer2LastHit"
-            android:gravity="center"
-            android:text="0"
-            android:layout_weight="2" />
+            <TextView
+                android:id="@+id/tvPlayer2Deaths"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
 
-        <TextView
-            android:id="@+id/tvPlayer2Denies"
-            android:gravity="center"
-            android:text="0"
-            android:layout_weight="2" />
+            <TextView
+                android:id="@+id/tvPlayer2Assists"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
 
-        <TextView
-            android:id="@+id/tvPlayer2GoldPerMinute"
-            android:gravity="center"
-            android:text="0"
-            android:layout_weight="3" />
-    </TableRow>
+            <TextView
+                android:id="@+id/tvPlayer2LastHit"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
 
-    <TableRow
-        android:id="@+id/trPlayer3Row"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:padding="4dp"
-        android:layout_weight="1" >
+            <TextView
+                android:id="@+id/tvPlayer2Denies"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
 
-        <TextView
-            android:id="@+id/tvPlayer3"
-            android:gravity="center"
-            android:text="Player3"
-            android:layout_weight="6" />
+            <TextView
+                android:id="@+id/tvPlayer2GoldPerMinute"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="0" />
+        </TableRow>
 
-        <ImageView
-            android:id="@+id/ivPlayer3Hero"
-            android:contentDescription="HeroPicture"
-            android:gravity="center"
-            android:layout_weight="3" />
+        <TableRow
+            android:id="@+id/trPlayer3Row"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="4dp" >
 
-        <TextView
-            android:id="@+id/tvPlayer3Level"
-            android:gravity="center"
-            android:text="0"
-            android:layout_weight="3" />
+            <TextView
+                android:id="@+id/tvPlayer3"
+                android:layout_weight="6"
+                android:gravity="center"
+                android:text="Player3" />
 
-        <TextView
-            android:id="@+id/tvPlayer3Kills"
-            android:gravity="center"
-            android:text="0"
-            android:layout_weight="2" />
+            <ImageView
+                android:id="@+id/ivPlayer3Hero"
+                android:layout_weight="3"
+                android:contentDescription="HeroPicture"
+                android:gravity="center" />
 
-        <TextView
-            android:id="@+id/tvPlayer3Deaths"
-            android:gravity="center"
-            android:text="0"
-            android:layout_weight="2" />
+            <TextView
+                android:id="@+id/tvPlayer3Level"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="0" />
 
-        <TextView
-            android:id="@+id/tvPlayer3Assists"
-            android:gravity="center"
-            android:text="0"
-            android:layout_weight="2" />
+            <TextView
+                android:id="@+id/tvPlayer3Kills"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
 
-        <TextView
-            android:id="@+id/tvPlayer3LastHit"
-            android:gravity="center"
-            android:text="0"
-            android:layout_weight="2" />
+            <TextView
+                android:id="@+id/tvPlayer3Deaths"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
 
-        <TextView
-            android:id="@+id/tvPlayer3Denies"
-            android:gravity="center"
-            android:text="0"
-            android:layout_weight="2" />
+            <TextView
+                android:id="@+id/tvPlayer3Assists"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
 
-        <TextView
-            android:id="@+id/tvPlayer3GoldPerMinute"
-            android:gravity="center"
-            android:text="0"
-            android:layout_weight="3" />
-    </TableRow>
+            <TextView
+                android:id="@+id/tvPlayer3LastHit"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
 
-    <TableRow
-        android:id="@+id/trPlayer4Row"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:padding="4dp"
-        android:layout_weight="1" >
+            <TextView
+                android:id="@+id/tvPlayer3Denies"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
 
-        <TextView
-            android:id="@+id/tvPlayer4"
-            android:gravity="center"
-            android:text="Player4"
-            android:layout_weight="6" />
+            <TextView
+                android:id="@+id/tvPlayer3GoldPerMinute"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="0" />
+        </TableRow>
 
-        <ImageView
-            android:id="@+id/ivPlayer4Hero"
-            android:contentDescription="HeroPicture"
-            android:gravity="center"
-            android:layout_weight="3" />
+        <TableRow
+            android:id="@+id/trPlayer4Row"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="4dp" >
 
-        <TextView
-            android:id="@+id/tvPlayer4Level"
-            android:gravity="center"
-            android:text="0"
-            android:layout_weight="3" />
+            <TextView
+                android:id="@+id/tvPlayer4"
+                android:layout_weight="6"
+                android:gravity="center"
+                android:text="Player4" />
 
-        <TextView
-            android:id="@+id/tvPlayer4Kills"
-            android:gravity="center"
-            android:text="0"
-            android:layout_weight="2" />
+            <ImageView
+                android:id="@+id/ivPlayer4Hero"
+                android:layout_weight="3"
+                android:contentDescription="HeroPicture"
+                android:gravity="center" />
 
-        <TextView
-            android:id="@+id/tvPlayer4Deaths"
-            android:gravity="center"
-            android:text="0"
-            android:layout_weight="2" />
+            <TextView
+                android:id="@+id/tvPlayer4Level"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="0" />
 
-        <TextView
-            android:id="@+id/tvPlayer4Assists"
-            android:gravity="center"
-            android:text="0"
-            android:layout_weight="2" />
+            <TextView
+                android:id="@+id/tvPlayer4Kills"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
 
-        <TextView
-            android:id="@+id/tvPlayer4LastHit"
-            android:gravity="center"
-            android:text="0"
-            android:layout_weight="2" />
+            <TextView
+                android:id="@+id/tvPlayer4Deaths"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
 
-        <TextView
-            android:id="@+id/tvPlayer4Denies"
-            android:gravity="center"
-            android:text="0"
-            android:layout_weight="2" />
+            <TextView
+                android:id="@+id/tvPlayer4Assists"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
 
-        <TextView
-            android:id="@+id/tvPlayer4GoldPerMinute"
-            android:gravity="center"
-            android:text="0"
-            android:layout_weight="3" />
-    </TableRow>
+            <TextView
+                android:id="@+id/tvPlayer4LastHit"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
 
-    <TableRow
-        android:id="@+id/trPlayer5Row"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:padding="4dp"
-        android:layout_weight="1" >
+            <TextView
+                android:id="@+id/tvPlayer4Denies"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
 
-        <TextView
-            android:id="@+id/tvPlayer5"
-            android:gravity="center"
-            android:text="Player5"
-            android:layout_weight="6" />
+            <TextView
+                android:id="@+id/tvPlayer4GoldPerMinute"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="0" />
+        </TableRow>
 
-        <ImageView
-            android:id="@+id/ivPlayer5Hero"
-            android:contentDescription="HeroPicture"
-            android:gravity="center"
-            android:layout_weight="3" />
+        <TableRow
+            android:id="@+id/trPlayer5Row"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="4dp" >
 
-        <TextView
-            android:id="@+id/tvPlayer5Level"
-            android:gravity="center"
-            android:text="0"
-            android:layout_weight="2" />
+            <TextView
+                android:id="@+id/tvPlayer5"
+                android:layout_weight="6"
+                android:gravity="center"
+                android:text="Player5" />
 
-        <TextView
-            android:id="@+id/tvPlayer5Kills"
-            android:gravity="center"
-            android:text="0"
-            android:layout_weight="2" />
+            <ImageView
+                android:id="@+id/ivPlayer5Hero"
+                android:layout_weight="3"
+                android:contentDescription="HeroPicture"
+                android:gravity="center" />
 
-        <TextView
-            android:id="@+id/tvPlayer5Deaths"
-            android:gravity="center"
-            android:text="0"
-            android:layout_weight="2" />
+            <TextView
+                android:id="@+id/tvPlayer5Level"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
 
-        <TextView
-            android:id="@+id/tvPlayer5Assists"
-            android:gravity="center"
-            android:text="0"
-            android:layout_weight="2" />
+            <TextView
+                android:id="@+id/tvPlayer5Kills"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
 
-        <TextView
-            android:id="@+id/tvPlayer5LastHit"
-            android:gravity="center"
-            android:text="0"
-            android:layout_weight="2" />
+            <TextView
+                android:id="@+id/tvPlayer5Deaths"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
 
-        <TextView
-            android:id="@+id/tvPlayer5Denies"
-            android:gravity="center"
-            android:text="0"
-            android:layout_weight="2" />
+            <TextView
+                android:id="@+id/tvPlayer5Assists"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
 
-        <TextView
-            android:id="@+id/tvPlayer5GoldPerMinute"
-            android:gravity="center"
-            android:text="0"
-            android:layout_weight="3" />
-    </TableRow>
-    
-    <TableRow
-        android:id="@+id/trButtonRow"
-        android:layout_width="fill_parent"
-        android:layout_weight="1" >
-        
-       <Button
-           android:id="@+id/bReturnHome"
-           android:text="Return Home" />
-       <Button
-           android:id="@+id/bViewIndividuals"
-           android:text="View Individual Stats" /> 
-        
-    </TableRow>
+            <TextView
+                android:id="@+id/tvPlayer5LastHit"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
 
-</TableLayout>
+            <TextView
+                android:id="@+id/tvPlayer5Denies"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tvPlayer5GoldPerMinute"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="0" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/trSecondHeader"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="5dp" >
+
+            <TextView
+                android:id="@+id/tvSecondHeaderText"
+                android:layout_gravity="center"
+                android:text="DIRE"
+                android:textSize="25sp"
+                android:layout_span="8" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/trPlayer6Row"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="4dp" >
+
+            <TextView
+                android:id="@+id/tvPlayer6"
+                android:layout_weight="6"
+                android:gravity="center"
+                android:text="Player6" />
+
+            <ImageView
+                android:id="@+id/ivPlayer6Hero"
+                android:layout_weight="3"
+                android:contentDescription="HeroPicture"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/tvPlayer6Level"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tvPlayer6Kills"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tvPlayer6Deaths"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tvPlayer6Assists"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tvPlayer6LastHit"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tvPlayer6Denies"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tvPlayer6GoldPerMinute"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="0" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/trPlayer7Row"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="4dp" >
+
+            <TextView
+                android:id="@+id/tvPlayer7"
+                android:layout_weight="6"
+                android:gravity="center"
+                android:text="Player7" />
+
+            <ImageView
+                android:id="@+id/ivPlayer7Hero"
+                android:layout_weight="3"
+                android:contentDescription="HeroPicture"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/tvPlayer7Level"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tvPlayer7Kills"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tvPlayer7Deaths"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tvPlayer7Assists"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tvPlayer7LastHit"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tvPlayer7Denies"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tvPlayer7GoldPerMinute"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="0" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/trPlayer8Row"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="4dp" >
+
+            <TextView
+                android:id="@+id/tvPlayer8"
+                android:layout_weight="6"
+                android:gravity="center"
+                android:text="Player8" />
+
+            <ImageView
+                android:id="@+id/ivPlayer8Hero"
+                android:layout_weight="3"
+                android:contentDescription="HeroPicture"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/tvPlayer8Level"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tvPlayer8Kills"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tvPlayer8Deaths"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tvPlayer8Assists"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tvPlayer8LastHit"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tvPlayer8Denies"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tvPlayer8GoldPerMinute"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="0" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/trPlayer9Row"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="4dp" >
+
+            <TextView
+                android:id="@+id/tvPlayer9"
+                android:layout_weight="6"
+                android:gravity="center"
+                android:text="Player9" />
+
+            <ImageView
+                android:id="@+id/ivPlayer9Hero"
+                android:layout_weight="3"
+                android:contentDescription="HeroPicture"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/tvPlayer9Level"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tvPlayer9Kills"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tvPlayer9Deaths"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tvPlayer9Assists"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tvPlayer9LastHit"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tvPlayer9Denies"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tvPlayer9GoldPerMinute"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="0" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/trPlayer10Row"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="4dp" >
+
+            <TextView
+                android:id="@+id/tvPlayer10"
+                android:layout_weight="6"
+                android:gravity="center"
+                android:text="Player10" />
+
+            <ImageView
+                android:id="@+id/ivPlayer10Hero"
+                android:layout_weight="3"
+                android:contentDescription="HeroPicture"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/tvPlayer10Level"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tvPlayer10Kills"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tvPlayer10Deaths"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tvPlayer10Assists"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tvPlayer10LastHit"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tvPlayer10Denies"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/tvPlayer10GoldPerMinute"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="0" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/trButtonRow"
+            android:layout_width="fill_parent"
+            android:layout_weight="1" >
+
+            <Button
+                android:id="@+id/bReturnHome"
+                android:text="Return Home" />
+
+            <Button
+                android:id="@+id/bViewIndividuals"
+                android:text="View Individual Stats" />
+        </TableRow>
+    </TableLayout>
+
+</ScrollView>
