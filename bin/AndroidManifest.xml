@@ -30,11 +30,6 @@
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.NoTitleBar">
         </activity>
-        <activity
-            android:name="IndividualStatsActivity"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.NoTitleBar">
-        </activity>
     </application>
 
 </manifest>
