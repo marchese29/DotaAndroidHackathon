@@ -42,7 +42,6 @@ public class MatchViewActivity extends Activity {
 
 	private void setWidgets() {
 		this.returnHomeButton = (Button) findViewById(R.id.bReturnHome);
-		this.individualStatsButton = (Button) findViewById(R.id.bViewIndividuals);
 
 		/*
 		 * Click listener for returnHomeButton
