@@ -20,6 +20,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MatchViewActivity extends Activity {
 
@@ -38,15 +39,22 @@ public class MatchViewActivity extends Activity {
 		Intent intent = getIntent();
 		this.matchID = intent.getStringExtra("matchID");
 
-		/*
-		 * TODO: Create all of the JSON objects using the JSONParser class.
-		 * Also, make sure the table has loaded correctly.
-		 */
-
-		setWidgets();
-		setWidgets2();
 		this.parser = new JSONParser(matchID);
-		this.setDataFromPlayerList(parser.getPlayerList());
+
+		/*
+		 * Check to see if we have executed correctly.
+		 */
+		if (!this.parser.hasFailed) {
+			setWidgets();
+			setWidgets2();
+			this.setDataFromPlayerList(parser.getPlayerList());
+		} else {
+			/*
+			 * TODO: Go to the error page.
+			 */
+			Toast.makeText(this, "There was an error loading JSON data",
+					Toast.LENGTH_LONG).show();
+		}
 
 	}
 
@@ -93,7 +101,8 @@ public class MatchViewActivity extends Activity {
 			ImageView heroPicture = (ImageView) this.table[i]
 					.getVirtualChildAt(1);
 			try {
-				heroPicture.setImageBitmap(new GetWebImage().execute(currentPlayer.HeroName).get());
+				heroPicture.setImageBitmap(new GetWebImage().execute(
+						currentPlayer.HeroName).get());
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			} catch (ExecutionException e) {
