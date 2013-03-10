@@ -57,21 +57,6 @@ public class MatchViewActivity extends Activity {
 				startActivity(intent);
 			}
 		});
-
-		/*
-		 * Click Listener for individualStatsButton
-		 */
-		this.individualStatsButton
-				.setOnClickListener(new View.OnClickListener() {
-
-					@Override
-					public void onClick(View v) {
-						Intent intent = new Intent(MatchViewActivity.this,
-								IndividualStatsActivity.class);
-						intent.putExtra("matchID", matchID);
-						startActivity(intent);
-					}
-				});
 	}
 
 	private void setWidgets2() {
@@ -95,12 +80,21 @@ public class MatchViewActivity extends Activity {
 			List<Integer> playerStats = currentPlayer.getIntList();
 			TextView playerName = (TextView) this.table[i].getVirtualChildAt(0);
 			playerName.setText(currentPlayer.name);
+			// TextView heroName = (TextView)
+			// this.table[i].getVirtualChildAt(1);
+			// heroName.setText(currentPlayer.HeroName);
 
 			for (int j = 2; j < 9; j++) {
 				TextView view = (TextView) this.table[i].getVirtualChildAt(j);
 				view.setText(playerStats.get(j - 2).toString());
 			}
 		}
+	}
+
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		this.finish();
 	}
 
 }

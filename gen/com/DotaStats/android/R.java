@@ -21,7 +21,6 @@ public final class R {
         public static final int aHeader2=0x7f060080;
         public static final int bMatchSearch=0x7f060002;
         public static final int bReturnHome=0x7f0600b7;
-        public static final int bViewIndividuals=0x7f0600b8;
         public static final int dHeader=0x7f060042;
         public static final int dHeader2=0x7f06007f;
         public static final int dnHeader=0x7f060045;

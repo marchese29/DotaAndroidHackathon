@@ -4,7 +4,8 @@
     android:id="@+id/ScrollMaster"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    tools:ignore="HardcodedText,TooManyViews" >
+    tools:ignore="HardcodedText,TooManyViews"
+    android:background="#000000" >
 
     <TableLayout
         android:id="@+id/OverallLayout"
@@ -837,10 +838,6 @@
             <Button
                 android:id="@+id/bReturnHome"
                 android:text="Return Home" />
-
-            <Button
-                android:id="@+id/bViewIndividuals"
-                android:text="View Individual Stats" />
         </TableRow>
     </TableLayout>
 
