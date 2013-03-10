@@ -49,9 +49,7 @@ public class JSONParser {
 		try {
 			result = new WebTask()
 					.execute(
-							"http://api.steampowered.com/IDOTA2Match_570/GetMatch"
-									+ "Details/V001/?match_id=143088168&key=84D99D637A497"
-									+ "66C4725E98DE758BD4D").get();
+							"http://dotawebapihackathon.apphb.com/api/matches/GetMatchDetails?matchId=143088168").get();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		} catch (ExecutionException e) {

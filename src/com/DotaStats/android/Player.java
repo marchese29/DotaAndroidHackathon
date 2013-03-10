@@ -9,6 +9,7 @@ import org.json.JSONObject;
 public class Player {
 
 	public String name;
+	public String HeroName;
 	public int level;
 	public int kills;
 	public int deaths;
@@ -19,6 +20,8 @@ public class Player {
 
 	public Player(JSONObject jsonObject) {
 		try {
+			this.name = jsonObject.getString("account_name");
+			this.HeroName = jsonObject.getString("hero_name");
 			this.level = Integer.parseInt(jsonObject.getString("level"));
 			this.kills = Integer.parseInt(jsonObject.getString("kills"));
 			this.deaths = Integer.parseInt(jsonObject.getString("deaths"));
