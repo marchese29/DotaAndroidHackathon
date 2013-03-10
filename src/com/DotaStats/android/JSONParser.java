@@ -23,12 +23,19 @@ import android.os.AsyncTask;
 public class JSONParser {
 
 	private List<Player> playerList;
+	
+	public boolean hasFailed;
 
 	public JSONParser(String matchID) {
 		// String jsonString = getJSONFromMatchID(matchID);
 		this.playerList = new ArrayList<Player>();
+		this.hasFailed = false;
 		try {
-			JSONObject json = new JSONObject(getJSONFromMatchID(matchID));
+			AsyncResult result = getJSONFromMatchID(matchID);
+			if (result.hasFailed()) {
+				throw new Exception();
+			}
+			JSONObject json = new JSONObject(getJSONFromMatchID(matchID).getResult());
 			JSONArray players = json.getJSONArray("players");
 
 			/*
@@ -41,12 +48,16 @@ public class JSONParser {
 
 		} catch (JSONException e) {
 			e.printStackTrace();
+			this.hasFailed = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			this.hasFailed = true;
 		}
 
 	}
 
-	private String getJSONFromMatchID(String matchID) {
-		String result = null;
+	private AsyncResult getJSONFromMatchID(String matchID) {
+		AsyncResult result = null;
 		try {
 			result = new WebTask().execute(matchID).get();
 		} catch (InterruptedException e) {
@@ -62,10 +73,37 @@ public class JSONParser {
 	}
 }
 
-class WebTask extends AsyncTask<String, Void, String> {
+class AsyncResult {
+	private String result;
+	private boolean error;
+	
+	public AsyncResult() {
+		this.error = false;
+		this.result = null;
+	}
+	
+	public void setError(boolean value) {
+		this.error = value;
+	}
+	
+	public String getResult() {
+		return result;
+	}
+	
+	public boolean hasFailed() {
+		return this.error;
+	}
+	
+	public void setText(String text) {
+		this.result = text;
+	}
+}
+
+class WebTask extends AsyncTask<String, Void, AsyncResult> {
 
 	@Override
-	protected String doInBackground(String... matchID) {
+	protected AsyncResult doInBackground(String... matchID) {
+		AsyncResult result = null;
 		StringBuilder builder = new StringBuilder();
 		HttpClient client = new DefaultHttpClient();
 		HttpGet httpGet = new HttpGet(
@@ -83,11 +121,21 @@ class WebTask extends AsyncTask<String, Void, String> {
 			}
 		} catch (ClientProtocolException e) {
 			e.printStackTrace();
+			result.setError(true);
 		} catch (IOException e) {
 			e.printStackTrace();
+			result.setError(true);
 		}
-
-		return builder.toString();
+		
+		if (result.hasFailed()) {
+			result.setText(null);
+		} else {
+			result.setText(builder.toString());
+		}
+		
+		return result;
+		
+		
 	}
 
 }
