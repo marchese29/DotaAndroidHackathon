@@ -6,15 +6,18 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.params.BasicHttpParams;
 import org.json.JSONArray;
 import org.json.JSONException;
+
+import android.os.AsyncTask;
 
 public class JSONParser {
 
@@ -24,11 +27,19 @@ public class JSONParser {
 	public JSONParser(String matchID) {
 		// String jsonString = getJSONFromMatchID(matchID);
 		this.playerList = new ArrayList<Player>();
+		try {
+			this.jsonArray = new JSONArray(getJSONFromMatchID(matchID));
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
 
 		/*
 		 * Iterate through the array and create players. Add the players to the
 		 * playerList.
 		 */
+		for (int i = 0; i < this.jsonArray.length(); i++) {
+
+		}
 		/*
 		 * Create test data for now, TODO: Make this do actual work.
 		 */
@@ -46,23 +57,42 @@ public class JSONParser {
 	}
 
 	private String getJSONFromMatchID(String matchID) {
-		StringBuilder sb = new StringBuilder();
-
+		String result = null;
 		try {
-			DefaultHttpClient httpclient = new DefaultHttpClient(
-					new BasicHttpParams());
-			HttpPost httppost = new HttpPost(
-					"http://someJSONUrl/jsonPlace.html");
-			httppost.setHeader("Content-type", "application/json");
-			InputStream inputStream = null;
-			HttpResponse response = httpclient.execute(httppost);
+			result = new WebTask()
+					.execute(
+							"http://api.steampowered.com/IDOTA2Match_570/GetMatch"
+								+ "Details/V001/?match_id=143088168&key=84D99D637A497"
+								+ "66C4725E98DE758BD4D").get();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} catch (ExecutionException e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+
+	public List<Player> getPlayerList() {
+		return this.playerList;
+	}
+}
+
+class WebTask extends AsyncTask<String, Void, String> {
+
+	@Override
+	protected String doInBackground(String... arg0) {
+		StringBuilder builder = new StringBuilder();
+		HttpClient client = new DefaultHttpClient();
+		HttpGet httpGet = new HttpGet(arg0[0]);
+		try {
+			HttpResponse response = client.execute(httpGet);
 			HttpEntity entity = response.getEntity();
-			inputStream = entity.getContent();
+			InputStream content = entity.getContent();
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					inputStream, "UTF-8"), 8);
-			String line = null;
+					content));
+			String line;
 			while ((line = reader.readLine()) != null) {
-				sb.append(line + "\n");
+				builder.append(line);
 			}
 		} catch (ClientProtocolException e) {
 			e.printStackTrace();
@@ -70,10 +100,7 @@ public class JSONParser {
 			e.printStackTrace();
 		}
 
-		return sb.toString();
+		return builder.toString();
 	}
 
-	public List<Player> getPlayerList() {
-		return this.playerList;
-	}
 }
