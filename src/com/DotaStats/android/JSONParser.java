@@ -30,14 +30,15 @@ public class JSONParser {
 		try {
 			JSONObject json = new JSONObject(getJSONFromMatchID(matchID));
 			JSONArray players = json.getJSONArray("players");
-			
+
 			/*
-			 * Iterate through the players, creating objects for all ten of them.
+			 * Iterate through the players, creating objects for all ten of
+			 * them.
 			 */
 			for (int i = 0; i < players.length(); i++) {
 				playerList.add(new Player(players.getJSONObject(i)));
 			}
-			
+
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
@@ -47,9 +48,7 @@ public class JSONParser {
 	private String getJSONFromMatchID(String matchID) {
 		String result = null;
 		try {
-			result = new WebTask()
-					.execute(
-							"http://dotawebapihackathon.apphb.com/api/matches/GetMatchDetails?matchId=143088168").get();
+			result = new WebTask().execute(matchID).get();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		} catch (ExecutionException e) {
@@ -66,10 +65,12 @@ public class JSONParser {
 class WebTask extends AsyncTask<String, Void, String> {
 
 	@Override
-	protected String doInBackground(String... arg0) {
+	protected String doInBackground(String... matchID) {
 		StringBuilder builder = new StringBuilder();
 		HttpClient client = new DefaultHttpClient();
-		HttpGet httpGet = new HttpGet(arg0[0]);
+		HttpGet httpGet = new HttpGet(
+				"http://dotawebapihackathon.apphb.com/api/matches/GetMatchDetails?matchId="
+						+ matchID[0]);
 		try {
 			HttpResponse response = client.execute(httpGet);
 			HttpEntity entity = response.getEntity();
