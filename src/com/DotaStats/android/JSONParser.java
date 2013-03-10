@@ -16,43 +16,31 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import android.os.AsyncTask;
 
 public class JSONParser {
 
-	private JSONArray jsonArray;
 	private List<Player> playerList;
 
 	public JSONParser(String matchID) {
 		// String jsonString = getJSONFromMatchID(matchID);
 		this.playerList = new ArrayList<Player>();
 		try {
-			this.jsonArray = new JSONArray(getJSONFromMatchID(matchID));
+			JSONObject json = new JSONObject(getJSONFromMatchID(matchID));
+			JSONArray players = json.getJSONArray("players");
+			
+			/*
+			 * Iterate through the players, creating objects for all ten of them.
+			 */
+			for (int i = 0; i < players.length(); i++) {
+				playerList.add(new Player(players.getJSONObject(i)));
+			}
+			
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
-
-		/*
-		 * Iterate through the array and create players. Add the players to the
-		 * playerList.
-		 */
-		for (int i = 0; i < this.jsonArray.length(); i++) {
-
-		}
-		/*
-		 * Create test data for now, TODO: Make this do actual work.
-		 */
-		this.playerList.add(new Player("Player1", 1, 1, 1, 1, 1, 1, 1));
-		this.playerList.add(new Player("Player2", 2, 2, 2, 2, 2, 2, 2));
-		this.playerList.add(new Player("Player3", 3, 3, 3, 3, 3, 3, 3));
-		this.playerList.add(new Player("Player4", 4, 4, 4, 4, 4, 4, 4));
-		this.playerList.add(new Player("Player5", 5, 5, 5, 5, 5, 5, 5));
-		this.playerList.add(new Player("Player6", 6, 6, 6, 6, 6, 6, 6));
-		this.playerList.add(new Player("Player7", 7, 7, 7, 7, 7, 7, 7));
-		this.playerList.add(new Player("Player8", 8, 8, 8, 8, 8, 8, 8));
-		this.playerList.add(new Player("Player9", 9, 9, 9, 9, 9, 9, 9));
-		this.playerList.add(new Player("Player10", 10, 10, 10, 10, 10, 10, 10));
 
 	}
 
@@ -62,8 +50,8 @@ public class JSONParser {
 			result = new WebTask()
 					.execute(
 							"http://api.steampowered.com/IDOTA2Match_570/GetMatch"
-								+ "Details/V001/?match_id=143088168&key=84D99D637A497"
-								+ "66C4725E98DE758BD4D").get();
+									+ "Details/V001/?match_id=143088168&key=84D99D637A497"
+									+ "66C4725E98DE758BD4D").get();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		} catch (ExecutionException e) {

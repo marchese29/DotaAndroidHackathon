@@ -3,6 +3,7 @@ package com.DotaStats.android;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Player {
@@ -17,22 +18,19 @@ public class Player {
 	public int goldPerMinute;
 
 	public Player(JSONObject jsonObject) {
-		// TODO: Populate the player data from the JSONObject.
-	}
-
-	/**
-	 * For Test use only!
-	 */
-	public Player(String name, int level, int kills, int deaths, int assists,
-			int lastHits, int denies, int goldPerMinute) {
-		this.name = name;
-		this.level = level;
-		this.kills = kills;
-		this.deaths = deaths;
-		this.assists = assists;
-		this.lastHits = lastHits;
-		this.denies = denies;
-		this.goldPerMinute = goldPerMinute;
+		try {
+			this.level = Integer.parseInt(jsonObject.getString("level"));
+			this.kills = Integer.parseInt(jsonObject.getString("kills"));
+			this.deaths = Integer.parseInt(jsonObject.getString("deaths"));
+			this.assists = Integer.parseInt(jsonObject.getString("assists"));
+			this.lastHits = Integer.parseInt(jsonObject.getString("last_hits"));
+			this.denies = Integer.parseInt(jsonObject.getString("denies"));
+			this.goldPerMinute = Integer.parseInt(jsonObject.getString("gold_per_min"));
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public List<Integer> getIntList() {
